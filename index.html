@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Tengo algo que preguntarte</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;1,9..144,400&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="card">
+    <section id="pregunta" class="view">
+      <span class="heart">💗</span>
+      <h1 id="titulo"></h1>
+      <p id="intro"></p>
+      <div class="btns">
+        <button id="si">Sí</button>
+        <button id="no">No</button>
+      </div>
+    </section>
+
+    <section id="resp-si" class="view fade" hidden>
+      <span class="heart">💖</span>
+      <h1>¡Dijiste que sí!</h1>
+      <p id="msg-si"></p>
+    </section>
+
+    <section id="resp-no" class="view fade" hidden>
+      <span class="heart">🤍</span>
+      <h1>Está bien y acepto tu decisión</h1>
+      <p id="msg-no"></p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

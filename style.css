@@ -1,0 +1,135 @@
+:root {
+  --bg: #fbeff0;
+  --bg2: #f6d5dc;
+  --ink: #4a1f2e;
+  --soft: #8a5565;
+  --rose: #c2375b;
+  --rose2: #a22a49;
+  --card: #fffafaee;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #2a1220;
+    --bg2: #431c33;
+    --ink: #fbe6ec;
+    --soft: #d9a5b6;
+    --rose: #e0537a;
+    --rose2: #c63f66;
+    --card: #3a1a2cee;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { height: 100%; }
+
+body {
+  margin: 0;
+  min-height: 100%;
+  background: radial-gradient(circle at 50% 20%, var(--bg2), var(--bg) 70%);
+  color: var(--ink);
+  font-family: 'Nunito', system-ui, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  overflow-x: hidden;
+}
+
+.card {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 460px;
+  background: var(--card);
+  border-radius: 28px;
+  padding: 44px 28px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(194, 55, 91, .18);
+}
+
+h1 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(28px, 7vw, 38px);
+  line-height: 1.2;
+  margin: 0 0 14px;
+}
+
+p {
+  margin: 0 0 26px;
+  color: var(--soft);
+  font-size: 17px;
+  line-height: 1.55;
+}
+
+.heart {
+  font-size: 56px;
+  display: block;
+  margin-bottom: 12px;
+  animation: beat 1.4s infinite;
+}
+
+@keyframes beat {
+  0%, 100% { transform: scale(1); }
+  14% { transform: scale(1.18); }
+  28% { transform: scale(1); }
+  42% { transform: scale(1.12); }
+}
+
+.btns {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+button {
+  font: 600 17px 'Nunito', sans-serif;
+  border: 0;
+  border-radius: 999px;
+  padding: 14px 36px;
+  cursor: pointer;
+  transition: transform .15s, background .2s;
+}
+
+button:focus-visible {
+  outline: 3px solid var(--rose);
+  outline-offset: 3px;
+}
+
+#si { background: var(--rose); color: #fff; }
+#si:hover { background: var(--rose2); transform: scale(1.06); }
+
+#no {
+  background: transparent;
+  color: var(--soft);
+  border: 1.5px solid var(--soft);
+}
+#no:hover { transform: scale(1.03); }
+
+.view[hidden] { display: none; }
+
+.fade { animation: in .8s ease both; }
+
+@keyframes in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
+
+.fall {
+  position: fixed;
+  top: -40px;
+  z-index: 1;
+  pointer-events: none;
+  animation: fall linear forwards;
+}
+
+@keyframes fall {
+  to { transform: translateY(110vh) rotate(360deg); opacity: .9; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .heart, .fade, .fall { animation: none; }
+}
