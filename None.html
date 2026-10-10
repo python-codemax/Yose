@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html idioma="es">
+<cabeza>
+<meta conjunto de caracteres="utf-8">
+<meta nombre="ventana gráfica"contenido="ancho=ancho-del-dispositivo, escala-inicial=1, ajuste-de-la-ventana-visual=cubrir">
+<título>Tengo algo que preguntarte</título>
+<enlace href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;1,9..144,400&family=Nunito:wght@400;600&display=swap"rel="hoja de estilo">
+<estilo>
+:raíz{
+  --bg:#fbeff0;--bg2:#f6d5dc;--tinta:#4a1f2e;--suave:#8a5565;--rosa:#c2375b;--rosa2:#a22a49;--tarjeta:#fffafaee;
+  tamaño de la caja:caja de borde;acolchado superior:entorno(parte superior insertada en el área segura,0píxeles);relleno inferior:entorno(inserción en la parte inferior del área segura,0píxeles);
+}
+@medios de comunicación(prefiere-esquema-de-colores:oscuro){:raíz:no([tema de datos="luz"]){--bg:#2a1220;--bg2:#431c33;--tinta:#fbe6ec;--suave:#d9a5b6;--rosa:#e0537a;--rosa2:#c63f66;--tarjeta:#3a1a2cee}}
+:raíz[tema de datos="oscuro"]{--bg:#2a1220;--bg2:#431c33;--tinta:#fbe6ec;--suave:#d9a5b6;--rosa:#e0537a;--rosa2:#c63f66;--tarjeta:#3a1a2cee}
+html{relleno de desplazamiento superior:entorno(parte superior insertada en el área segura,0píxeles);altura:100%}
+*{tamaño de la caja:caja de borde}
+cuerpo{margen:0;altura mínima:100%;fondo:gradiente radial(círculo en50% 20%,var(--bg2),var(--bg)70%);color:var(--tinta);familia de fuentes:'Nunito',interfaz de usuario del sistema,sans-serif;mostrar:doblar;alinear elementos:centro;justificar-contenido:centro;relleno:24píxeles;desbordamiento-x:oculto}
+.tarjeta{posición:relativo;índice z:2;ancho:100%;ancho máximo:460píxeles;fondo:var(--tarjeta);radio de borde:28píxeles;relleno:44píxeles 28píxeles;alineación de texto:centro;sombra de caja:0 20píxeles 60píxeles rgba(194,55,91,.18)}
+h1{familia de fuentes:'Francias',Georgia,serif;peso de fuente:400;tamaño de fuente:abrazadera(28píxeles,7VW,38píxeles);altura de línea:1.2;margen:0 0 14píxeles}
+pag{margen:0 0 26píxeles;color:var(--suave);tamaño de fuente:17píxeles;altura de línea:1.55}
+.corazón{tamaño de fuente:56píxeles;mostrar:bloquear;margen inferior:12píxeles;animación:derrotar1.4sinfinito}
+@fotogramasclavederrotar{0%,100%{transformar:escala(1)}14%{transformar:escala(1.18)}28%{transformar:escala(1)}42%{transformar:escala(1.12)}}
+.botones{mostrar:doblar;brecha:14píxeles;justificar-contenido:centro;envoltura flexible:envoltura}
+botón{fuente:600 17píxeles 'Nunito',sans-serif;borde:0;radio de borde:999píxeles;relleno:14píxeles 36píxeles;cursor:puntero;transición:transformar.15s,fondo.2s}
+botón:enfoque visible{describir:3píxelessólidovar(--rosa);contorno-desplazamiento:3píxeles}
+#si{fondo:var(--rosa);color:#fff}
+#si:flotar{fondo:var(--rosa2);transformar:escala(1.06)}
+#No{fondo:transparente;color:var(--suave);borde:1.5píxelessólidovar(--suave)}
+#No:flotar{transformar:escala(1.03)}
+.vista[oculto]{mostrar:ninguno}
+.desteñir{animación:en.8sfacilitar ambos}
+@fotogramasclaveen{de{opacidad:0;transformar:traducirY(10píxeles)}a{opacidad:1;transformar:ninguno}}
+.caer{posición:fijado;arriba:-40píxeles;índice z:1;eventos de puntero:ninguno;animación:caída lineal hacia adelante}
+@fotogramasclavecaer{a{transformar:traducirY(110vh)girar(360grados);opacidad:.9}}
+@medios de comunicación(prefiere-movimiento-reducido:reducir){.corazón,.desteñir,.caer{animación:ninguno}}
+</estilo>
+</cabeza>
+<cuerpo>
+<principal clase="tarjeta">
+  <sección identificación="pregunta"clase="vista">
+    <durar clase="corazón">💗</durar>
+    <h1 identificación="título"></h1>
+    <pag identificación="introducción"></pag>
+    <div clase="botones">
+      <botón identificación="si">Si</botón>
+      <botón identificación="No">No</botón>
+    </div>
+  </sección>
+  <sección identificación="resp-si"clase="vista desvanecimiento"oculto>
+    <durar clase="corazón">💖</durar>
+    <h1>¡Dijiste que sí!</h1>
+    <pag identificación="mensaje-si"></pag>
+  </sección>
+  <sección identificación="resp-no"clase="vista desvanecimiento"oculto>
+    <durar clase="corazón">🤍</durar>
+    <h1>Está bien y acepto tu decisión.</h1>
+    <pag identificación="no-mensaje"></pag>
+  </sección>
+</principal>
+<guion>
+/* ✏️ PERSONALIZA AQUÍ */
+constante NOMBRE = "Yose";                      // el nombre de ella/él
+constante TU_NOMBRE = "Gera";                // tu nombre
+constante PREGUNTA = Quieres ser mi novia?";   // o "¿Quieres ser mi novia/novio?"
+constante INTRO = "Desde que te conozco, mis días son mejores. Tenía que decírtelo con el corazón en la mano.";
+constante MENSAJE_SI = "Hiciste al hombre más feliz de hoy. Prometo cuidarte, hacerte reír y elegirte cada día. — " + TU_NOMBRE;
+constante MENSAJE_NO = "Gracias por ser sincera/o conmigo y por leer esto hasta aquí. Tu amistad vale muchísimo para mí. — " + TU_NOMBRE;
+documento.obtenerElementoPorId('título').textoContenido = NOMBRE + ", " + PREGUNTA.charAt(0).toMinúsculas() + PREGUNTA.rebanada(1);
+documento.obtenerElementoPorId('introducción').textoContenido = INTRO;
+documento.obtenerElementoPorId('msg-si').textoContenido = MENSAJE_SI;
+documento.obtenerElementoPorId('msg-no').textoContenido = MENSAJE_NO;
+función espectáculo(identificación){
+  documento.consultaSelectorTodo('.vista').para cada(v => v.oculto = verdadero);
+  documento.obtenerElementoPorId(identificación).oculto = FALSO;
+}
+función lluvia(){
+  constante emojis = ['💖','💗','💕','🌹','✨','💘'];
+  para(dejar i=0;i<45;i++){
+    constante s = documento.crearElemento('durar');
+    s.nombre de clase = 'caer';
+    s.textoContenido = emojis[Matemáticas.piso(Matemáticas.aleatorio()*emojis.longitud)];
+    s.estilo.izquierda = Matemáticas.aleatorio()*100 + 'vw';
+    s.estilo.tamaño de fuente = (16 + Matemáticas.aleatorio()*26) + 'px';
+    s.estilo.Duración de la animación = (3 + Matemáticas.aleatorio()*4) + 's';
+    s.estilo.Retraso de animación = (Matemáticas.aleatorio()*3) + 's';
+    documento.cuerpo.agregarHijo(s);
+    establecerTiempoDeEspera(() => s.eliminar(), 11000);
+  }
+}
+documento.obtenerElementoPorId('si').agregarOyenteDeEventos('hacer clic', () => { espectáculo('resp-si'); lluvia(); establecerIntervalo(lluvia, 6000); });
+documento.obtenerElementoPorId('No').agregarOyenteDeEventos('hacer clic', () => espectáculo('resp-no'));
+espectáculo('pregunta');
+</guion>
+</cuerpo>
+</html>
